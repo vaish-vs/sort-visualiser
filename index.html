@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Sort Algorithm Visualiser
+        </title>
+
+        <link rel="stylesheet" href="index.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        
+        
+    
+    </head>
+<body>
+    <div class="container">
+        
+        <div class="textbox">
+            <textarea class="inputText" id="charInput" placeholder="Enter numbers or letters separated by commas."></textarea>
+        </div>
+
+        <div class="board">
+            <div class="chars"></div>
+    
+        </div>
+
+
+            <div class="algos">
+                <form>
+                    
+                    <label>
+                        <input type="radio" name="algotype"/>
+                        Bubble
+                    </label><br>
+                    <label>
+                        <input type="radio" name="algotype"/>
+                        Selection
+                    </label>
+                </form>
+            </div>
+
+            <button class="submitBtn" onclick="appendthem()" >Visualise It!</button>
+        <script type="text/javascript" src="index.js"></script>
+    </div>
+</body>
+</html>
