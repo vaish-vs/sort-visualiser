@@ -25,6 +25,8 @@ function appendThem() {
     selectionSort();
   } else if (algo[2].checked) {
     insertionSort();
+  } else if (algo[3].checked) {
+    mergeSort();
   } else {
     console.log("Not an option!");
   }
