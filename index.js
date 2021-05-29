@@ -23,8 +23,7 @@ function appendthem(){
             isSwapped =false;
     
             for(var j=0; j<array.length-m-1; j++){
-                if( board.children[j].innerHTML > board.children[j+1].innerHTML ){
-
+                if(  Number(board.children[j].innerHTML) > Number(board.children[j+1].innerHTML) ){
                     
                         var temp = board.children[j].innerHTML;
                         board.children[j].innerHTML = board.children[j+1].innerHTML;    
