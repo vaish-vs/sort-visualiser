@@ -18,10 +18,8 @@ function appendthem(){
         elem.appendChild(textnode);
         board.appendChild(elem);    
     }
-
-    
+  
         bubbleSort();
-    
- 
+
 }
 
