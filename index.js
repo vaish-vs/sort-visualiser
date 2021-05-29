@@ -1,11 +1,11 @@
 var board = document.getElementsByClassName("chars")[0];
-var isSwapped = false;
+var array= new Array();
 
 function appendthem(){
     var input = document.getElementById("charInput").value; 
     input = input.replace(/ /g,'')
     console.log(input);
-    var array= input.split(",");
+    array = input.split(",");
 
     while (board.firstChild) {
         board.removeChild(board.lastChild);
@@ -19,26 +19,9 @@ function appendthem(){
         board.appendChild(elem);    
     }
 
-        for(var m=0; m<array.length; m++){
-            isSwapped =false;
     
-            for(var j=0; j<array.length-m-1; j++){
-                if(  Number(board.children[j].innerHTML) > Number(board.children[j+1].innerHTML) ){
-                    
-                        var temp = board.children[j].innerHTML;
-                        board.children[j].innerHTML = board.children[j+1].innerHTML;    
-                        board.children[j+1].innerHTML = temp;
-                    
-                
-                    isSwapped = true;
-                }
-            }
+        bubbleSort();
     
-          if( !isSwapped ){
-              break;
-          }
-        }
-    
-    
+ 
 }
 
