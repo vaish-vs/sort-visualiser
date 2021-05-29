@@ -5,10 +5,14 @@ function selectionSort() {
   for (var i = 0; i < array.length - 1; i++) {
     min = i;
     for (var j = i + 1; j < array.length; j++) {
-      if (Number(board.children[min]) > Number(board.children[j])) min = j;
+      if (
+        Number(board.children[min].innerHTML) >
+        Number(board.children[j].innerHTML)
+      )
+        min = j;
     }
-    var temp = board.children[min];
-    board.children[min] = board.children[i];
-    board.children[i] = temp;
+    var temp = board.children[min].innerHTML;
+    board.children[min].innerHTML = board.children[i].innerHTML;
+    board.children[i].innerHTML = temp;
   }
 }
