@@ -14,6 +14,10 @@ function bubbleSort() {
         board.children[j].innerHTML = board.children[j + 1].innerHTML;
         board.children[j + 1].innerHTML = temp;
         isSwapped = true;
+
+        //Setting heights for the visual bars according to swapped values
+        visualiseIt( j, Number(board.children[j].innerHTML) );
+        visualiseIt( j+1, Number(board.children[j+1].innerHTML) );
       }
     }
 

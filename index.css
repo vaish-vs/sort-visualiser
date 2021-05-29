@@ -4,8 +4,6 @@ body{
     background-color: #eaeef5;
 }
 
-
-
 .sub-container{
     position: absolute;
     top: 50%;
@@ -31,7 +29,7 @@ body{
     transform: translate(-50%, -50%);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
     padding: 20px 20px;
-    
+    overflow: hidden;
 }
 
 .chars{
@@ -39,6 +37,29 @@ body{
     grid-template-columns: repeat(8, 1fr);
     grid-column-gap: 0px;
 }
+
+.visualise{
+    position: absolute;
+    height: 80%;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.visualiseItem{
+    transition: height 650ms ease-in-out;
+    width: 10px;
+    background-color: #645EBE;
+    margin-top: 20%;
+    height: 0px;
+}
+
+#visualiseFirst{
+    margin-left: 10px;
+}
+
 
 .textbox{
     height: 100px;

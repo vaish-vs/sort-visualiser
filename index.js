@@ -3,6 +3,8 @@ var array = new Array();
 var algo = document.getElementsByClassName("algorithm"); //Gets all elements with class name "Algorithm". Algo will be an array.
 
 
+
+
 function appendThem() {
 
   //Remove white spaces and split the values wherever  comma occurs
@@ -38,8 +40,8 @@ function appendThem() {
   } else {
     console.log("Not an option!");
   }
-}
 
+}
 
 function randomArray(){
   var randomArray = Array(8).fill().map( () => Math.round( Math.random() * 10 ) );
