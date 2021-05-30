@@ -2,7 +2,7 @@ var board = document.getElementsByClassName("chars")[0];
 
 function insertionSort() {
   var key, i, j;
-  for (i = 1; i < array.len; i++) {
+  for (i = 1; i < array.length; i++) {
     key = board.children[i].innerHTML;
     j = i - 1;
     while (j >= 0 && Number(board.children[j].innerHTML) > Number(key)) {

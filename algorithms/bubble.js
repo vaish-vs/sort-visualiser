@@ -12,12 +12,12 @@ function bubbleSort() {
       ) {
         var temp = board.children[j].innerHTML;
         board.children[j].innerHTML = board.children[j + 1].innerHTML;
+        visualiseIt(j, Number(board.children[j].innerHTML));
         board.children[j + 1].innerHTML = temp;
+        visualiseIt(j + 1, Number(board.children[j + 1].innerHTML));
         isSwapped = true;
 
         //Setting heights for the visual bars according to swapped values
-        visualiseIt( j, Number(board.children[j].innerHTML) );
-        visualiseIt( j+1, Number(board.children[j+1].innerHTML) );
       }
     }
 
