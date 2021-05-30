@@ -3,9 +3,11 @@ var array = new Array();
 var algo = document.getElementsByClassName("algorithm"); //Gets all elements with class name "Algorithm". Algo will be an array.
 
 
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 
-
-function appendThem() {
+async function appendThem() {
 
   //Remove white spaces and split the values wherever  comma occurs
   var input = document.getElementById("charInput").value;
@@ -24,8 +26,13 @@ function appendThem() {
     elem.style.marginLeft = "20px";
     var textnode = document.createTextNode(array[i]);
     elem.appendChild(textnode);
+    elem.className = "child";
     board.appendChild(elem);
+    visualiseBar(i, Number(board.children[i].innerHTML),0);
+    await sleep(500);
   }
+
+
 
 
   //Checking for which algorithm is selected in the Radio Buttons
@@ -45,5 +52,9 @@ function appendThem() {
 
 function randomArray(){
   var randomArray = Array(8).fill().map( () => Math.round( Math.random() * 10 ) );
+
+  if(randomArray[7] == 7 || randomArray[7] == 8 || randomArray[7] == 9 || randomArray[7] == 10){
+    randomArray[7] = Math.round( randomArray[7]/2 );
+  }
   document.getElementById("charInput").value = randomArray;
 }
