@@ -1,15 +1,17 @@
 //MergeArray contains board children items
+var leftArray, rightArray, leftArrayIndex, rightArrayIndex;
 function mergeSort() {
   var mergeArray = [];
   for (var i = 0; i < array.length; i++) {
     mergeArray.push(board.children[i]);
   }
-  sortArray(mergeArray);
+  mergeArray = sortArray(mergeArray);
 }
 //SortArray breaks down the arrays to two halfs recursively and then sorts and then merges them
 function sortArray(mergeArray) {
-  var leftArray = mergeArray.slice(0, mergeArray.length / 2);
-  var rightArray = mergeArray.slice(mergeArray.length / 2, mergeArray.length);
+  if (mergeArray.length === 1) return;
+  leftArray = mergeArray.slice(0, mergeArray.length / 2);
+  rightArray = mergeArray.slice(mergeArray.length / 2, mergeArray.length);
   leftArray = sortArray(leftArray);
   rightArray = sortArray(rightArray);
   return merge(leftArray, rightArray);
@@ -17,23 +19,23 @@ function sortArray(mergeArray) {
 //Function to sort and merge two
 function merge(leftArray, rightArray) {
   var mainArray = []; //main mergeed sorted array
-  var leftArrayIndex = 0;
-  var rightArrayIndex = 0;
+  leftArrayIndex = 0;
+  rightArrayIndex = 0;
   var mainArrayIndex = 0;
   //check each index and see which element is larger in one row and add then add the other
   while (
-    leftArrayIndex < leftArray.length ||
+    leftArrayIndex < leftArray.length &&
     rightArrayIndex < rightArray.length
   ) {
     if (
       Number(leftArray[leftArrayIndex].innerHTML) <=
       Number(rightArray[rightArrayIndex].innerHTML)
     ) {
-      mainArray[mainArray++] = leftArray[leftArrayIndex++];
-      mainArray[mainArray++] = rightArray[rightArrayIndex++];
+      mainArray[mainArrayIndex++] = leftArray[leftArrayIndex++];
+      mainArray[mainArrayIndex++] = rightArray[rightArrayIndex++];
     } else {
-      mainArray[mainArray++] = rightArray[rightArrayIndex++];
-      mainArray[mainArray++] = leftArray[leftArrayIndex++];
+      mainArray[mainArrayIndex++] = rightArray[rightArrayIndex++];
+      mainArray[mainArrayIndex++] = leftArray[leftArrayIndex++];
     }
   }
   //condition where left array is larger than right
