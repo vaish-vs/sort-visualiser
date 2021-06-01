@@ -40,6 +40,6 @@ async function bubbleSort() {
   }
 
   visualiseBar(7, Number(board.children[7].innerHTML));
-  await sleep(1000);
+  await sleep(500);
   backToNormal(7);
 }
